@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
     res.redirect('/posts');
   } catch (err) {
     console.error(err);
-    res.render('new', { error: 'Не вдалося зберегти пост. Перевірте дані.' });
+    res.render('new', { error: 'Cannot save posts. Check data' });
   }
 });
 

@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404).send('Сторінку не знайдено');
+  res.status(404).send('Page not Found');
 });
 
 app.listen(PORT, () => {
