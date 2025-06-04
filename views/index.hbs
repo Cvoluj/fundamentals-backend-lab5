@@ -1,0 +1,27 @@
+<h1>Posts</h1>
+
+{{#if posts.length}}
+  <ul class="posts-list">
+    {{#each posts}}
+      <li class="post-item">
+        <div class="post-header">
+          <h2>{{this.title}}</h2>
+          <small>{{formatDate this.createdAt}}</small>
+        </div>
+        <p class="post-body">{{this.article}}</p>
+        <div class="post-footer">
+          <span class="post-author">Author: {{this.author}}</span>
+          <div class="actions">
+            <a href="/posts/{{this._id}}/edit" class="btn btn-edit">Edit</a>
+            <form action="/posts/{{this._id}}?_method=DELETE" method="POST" class="inline-form">
+              <button type="submit" class="btn btn-delete">Delete</button>
+            </form>
+            <a href="/posts/{{this._id}}/json" class="btn btn-json">JSON</a>
+          </div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>There are no posts at this moment</p>
+{{/if}}
